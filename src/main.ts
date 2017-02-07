@@ -6,7 +6,11 @@ import { environment } from './environments/environment';
 import { AppModule } from './app/app.module';
 
 if (environment.production) {
+  
+  console.log("Entered Production Mode");
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(success => console.log("Bootstrap success"))
+  .catch(error  =>  console.log(error));
